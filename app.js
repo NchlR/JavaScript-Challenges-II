@@ -184,6 +184,7 @@ console.log(convertToZeros([1, 2, 3, 4, 5, 6]));
 // ===========================================================
 
 // Filter out all the apples
+// Using For-loop
 function removeApples(arr) {
   for (let i = 0; i < arr.length; ++i) {
     if (arr[i] !== 'Apple') {
@@ -193,7 +194,52 @@ function removeApples(arr) {
       console.log(arr[i])
     }
   }
+  return arr 
+}
+
+// Using 'Array Filter'
+
+// return arr.filter(elem => elem !== 'Apple')
+// The 'filter' is similar to 'map'
+
+console.log(removeApples(["Banana", "Apple", "Orange", "Apple"]));
+
+// ===========================================================
+
+
+// Filter out all the falsy values
+
+function filterOutFalsy(arr) {
+  // For-loop
+  let truthyArr = [];
+  for (let i = 0; i < arr.length; ++i) {
+    if (!!arr[i] === true) {
+      console.log(arr[i])
+    }
+  }
   return arr
 }
 
-console.log(removeApples(["Banana", "Apple", "Orange", "Apple"]));
+// Filter
+//  return arr.filter(elem => !!elem === true)
+// Take the current element and convert it into a boolean value
+// If the element evaluates to 'true', then 
+// include the element in the filtered array
+
+console.log(filterOutFalsy(['', NaN, 500, null, false, 0]))
+
+// ===========================================================
+
+// Truthy to true, Falsy to false
+function convertToBoolean(arr) {
+  return arr.map(elem => !!elem)
+}
+
+console.log(convertToBoolean([500, 0, "David", "", []]))
+
+
+
+
+
+
+
